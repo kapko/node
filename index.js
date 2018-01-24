@@ -1,11 +1,12 @@
 const express = require('express'),
-  app = express();
+  app = express(),
+  server = require('http').createServer(app);
 
 app.get('/', (req, res)=>{
   res.send('Hello world');
 });
 
 
-app.listen('3000', (req, res)=>{
-  console.log('port is 3000');
+server.listen('3000', (req, res)=>{
+  console.log('SERVER = ', server.address());
 })
